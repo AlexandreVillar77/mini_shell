@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_split_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/05 11:03:25 by avillar           #+#    #+#             */
-/*   Updated: 2022/06/21 16:12:59 by avillar          ###   ########.fr       */
+/*   Created: 2022/06/21 16:16:02 by avillar           #+#    #+#             */
+/*   Updated: 2022/06/21 16:16:30 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	init_split(t_split *split, const char *s, char c)
 {
-	char	cr;
-
-	cr = c;
-	while (n > 0 && *(char *)s != cr)
-	{
-		s++;
-		n -= sizeof(char);
-	}
-	if (n > 0)
-		return ((void *)s);
-	else
-		return (0);
+	split->i = skipc(s, c, 0);
+	split->j = 0;
+	split->len = 0;
 }

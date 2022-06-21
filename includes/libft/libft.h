@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 10:45:30 by avillar           #+#    #+#             */
-/*   Updated: 2022/06/21 16:00:17 by avillar          ###   ########.fr       */
+/*   Updated: 2022/06/21 16:17:33 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_split{
 	int	len;
 }				t_split;
 
+int				skipc(const char *s, char c, int i);
+void			init_split(t_split *split, const char *s, char c);
 int				ft_strlen(char *str);
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
